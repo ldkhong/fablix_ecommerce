@@ -13,6 +13,6 @@
               url="jdbc:mysql://localhost:3306/moviedb?autoReconnect=true&amp;useSSL=false&amp;cachePrepStmts=true"/>
     <Environment
             name = "recaptcha-secret"
-            value = "6LcllsoaAAAAAC5qLr_w-jScdyMgIXa9S6pC9Jex"
+            value = "recaptcha-secret-value"
             type = "java.lang.String"/>
 </Context>
