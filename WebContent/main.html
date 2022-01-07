@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fablix Main page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+<!-- Navigation -->
+<div class="top-navigation">
+    <a class="nav-item logo" href="main.html">Fablix</a>
+    <div class="top-navigation">
+        <a class="nav-item" href="movies.html">Movies</a>
+        <a class="nav-item active" href="main.html">Search</a>
+        <!-- browse by genres -->
+        <div class="genres">
+            <button class="genres-button">Genres
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="genres-content" id="genres-content">
+               <!-- <a href="#">movie genres</a> -->
+            </div>
+        </div>
+        <a class="nav-item" href="cart.html">Cart</a>
+        <a class="nav-item" href="login.html">Sign in</a>
+    </div>
+    <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+</div>
+
+<!-- Main Body -->
+<div class="main-body">
+
+<!-- Autocomplete-search -->
+<div class="auto-search-title"> Search Your Movie</div>
+<div class="auto-search">
+    <input type="text" name="movie" id="autocomplete"
+           class="autocomplete-searchbox form-control"
+           placeholder="Enter the movie's title"/>
+    <button type="submit" id="btn_auto" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
+</div>
+
+<!-- Browse by letter [1-9], [A-Z] and *  -->
+<div class="letters" id="letters">
+    <!-- <a href="#">[1-9 A-Z *]</a> -->
+</div>
+
+<!--Advanced search container-->
+<a id="advanced_search" href="#" onclick="showAdvancedSearch()">More advanced search query fields</a>
+<form class="container" id="search_form" method="GET" action="#" >
+    <h1>Search</h1>
+    <input name="title" placeholder="Title" type="text"
+           onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}">
+
+    <input name="year" placeholder="Year (YYYY)" type="text"
+           onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}">
+
+    <input name="director" placeholder="Director" type="text"
+           onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}">
+
+    <input name="star" placeholder="Star" type="text"
+           onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}"><br><br>
+
+    <input type="submit" class="btn btn-outline-primary" value="Search">
+
+    <div id="message" style="text-align: center; color: red"></div>
+</form>
+
+</div>
+</body>
+
+<script type="text/javascript">
+    function specialChar(input) {
+        if ((/^[%_]+$/).test(input) == true) {
+            $("#message").text("Cannot Contains Special Character!");
+            return false;
+        }
+        else {
+            $("#message").text("");
+            return true;
+        }
+    }
+
+    function showAdvancedSearch(){
+        if(document.getElementById("search_form").style.display === "none")
+            document.getElementById("search_form").style.display = "block";
+        else
+            document.getElementById("search_form").style.display = "none";
+    }
+</script>
+
+<!-- include our own JS file -->
+<script src="./main_search.js"></script>
+<script src="./main_browse.js"></script>
+<script src="./main_autocomplete.js"></script>
+</html>

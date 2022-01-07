@@ -1,0 +1,105 @@
+.main-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Auto complete search title */
+.auto-search-title{
+    text-align: center;
+    margin: 20px 0px;
+    height: 60px;
+    font-size: 40px;
+    overflow: hidden;
+}
+
+/* Auto complete search bar and button*/
+.auto-search {
+    text-align: center;
+}
+
+.autocomplete-searchbox {
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid #74b9ff;
+    border-radius: 1.5rem;
+    max-width: 60%;
+}
+
+.auto-search button{
+    position: absolute;
+    right: 20%;
+    font-size: 20px;
+    border: none;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+/* List of letters */
+.letters {
+    text-align: center;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* link of to each numbers and letters*/
+.letters a {
+    padding:8px;
+}
+
+/* Advanced search form */
+#advanced_search{
+    margin: 0px auto 10px auto;
+    text-decoration: underline;
+}
+
+.container {
+    display: none;
+    margin: 10px auto;
+    padding: 20px;
+    width: 440px;
+    text-align: center;
+
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+.container h1{
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.container input[type = "text"] {
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    border: 2px solid #74b9ff;
+    border-radius: 1.5rem;
+    margin: 10px auto;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    width: 80%;
+}
+
+@media screen and (max-width: 440px) {
+    #search_form {
+        width: 90%;
+    }
+
+    .auto-search-title, .letters{
+        display: none;
+    }
+}
+
+
+

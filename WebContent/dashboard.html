@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="fablix_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<!-- top logo bar-->
+<div id="logo-bar">
+    <div id="title" style="color: #05feff">DASHBOARD</div>
+</div>
+
+<!-- top navigation bar-->
+<div class="top_nav">
+    <a href="main.html">Home</a>
+    <div class="topnav-right">
+        <a href="login.html">Logout</a>
+    </div>
+</div>
+<div id="star_message" style="text-align: center; color: red"></div>
+<!-- Grid container-->
+<div class="column">
+    <div class="container_search">
+        <form id="add_star" method="GET" action="#">
+            <br>
+            <h3>Add Star</h3>
+            <br><br>
+            <label><b>Star&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+            <input name="star" placeholder="Enter star's name" type="text"
+                   onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}" required><br><br>
+            <br>
+            <label><b>BirthYear</b></label>
+            <input name="year" placeholder="YYYY" type="text" maxlength="4" pattern="^[0-9]+$" title="year has to be number"><br><br>
+
+            <br>
+            <input type="submit" value="add">
+            <br><br><br>
+        </form>
+    </div>
+</div>
+
+<div class="column">
+    <div class="container_search">
+        <form id="add_movie" method="GET" action="#">
+            <br>
+            <h3>Add Movie</h3>
+            <br><br>
+            <label><b>Title&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+            <input name="title" placeholder="Enter movie title" type="text"
+                   onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}" required><br><br>
+
+            <br>
+            <label><b>Director</b></label>
+            <input name="director" placeholder="Enter director's name" type="text"
+                   onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}" required><br><br>
+
+            <br>
+            <label><b>Year&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+            <input name="year" placeholder="YYYY" type="text" maxlength="4" pattern="^[0-9]+$" title="year has to be number" required><br><br>
+
+            <br>
+            <label><b>Genre&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+            <input name="genre" placeholder="Enter genre" type="text"
+                   onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}" required><br><br>
+
+            <br>
+            <label><b>Star&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+            <input name="star" placeholder="Enter star's name" type="text"
+                   onblur="if(specialChar(this.value)==false) {this.value=''; this.focus()}" required><br><br>
+            
+            <br>
+            <input type="submit" value="Add">
+            <br><br><br>
+        </form>
+    </div>
+</div>
+
+<!-- metadata -->
+<br><br>
+<div style="text-align: center;">
+    <form id="metadata" method="get" action="#">
+        <input type="submit" value="View metadata">
+    </form>
+    <div id="meta_table">
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    function specialChar(input) {
+        if ((/^[%_]+$/).test(input) == true) {
+            $("#login_error_message").text("Contains Special Character!");
+            return false;
+        }
+        else {
+            $("#login_error_message").text("");
+            return true;
+        }
+    }
+
+</script>
+<!-- include jQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- include our own JS file -->
+<script src="./dashboard.js"></script>
+</html>

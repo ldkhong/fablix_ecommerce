@@ -1,0 +1,58 @@
+<!--
+    This .html performs two steps:
+    1. Create a html template skeleton, with all the elements defined (some left empty) and named with ids.
+    2. Load single-star.js to populate the data into empty elements.
+   -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="single-page.css">
+
+    <title>Single Star</title>
+</head>
+<body>
+
+<!-- top navigation bar-->
+<div class="top-navigation">
+    <a class="nav-item logo" href="main.html">Fablix</a>
+    <div class="top-navigation">
+        <a class="nav-item active" href="movies.html">Movies</a>
+        <a class="nav-item" href="main.html">Search</a>
+        <!-- browse by genres -->
+        <div class="genres">
+            <button class="genres-button">Genres
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="genres-content" id="genres-content">
+                <!-- <a href="#">movie genres</a> -->
+            </div>
+        </div>
+        <a class="nav-item" href="cart.html">Cart</a>
+        <a class="nav-item" href="login.html">Sign in</a>
+    </div>
+    <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+</div>
+
+<div class="page-container" id="single-star"></div>
+
+<div class="other-btn">
+    <a href="#" class="btn btn-outline-primary" id="go-back-btn">Go Back</a>
+</div>
+<!-- Load jQuery and Bootstrap JS -->
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+
+<!-- Load our own JS file -->
+<script src="single-star.js"></script>
+<script src="main_browse.js"></script>
+</body>
+
+
+</html>

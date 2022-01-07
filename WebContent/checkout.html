@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="fablix_style.css">
+    <title>Checkout page</title>
+  </head>
+
+  <body>
+  <!-- Navigation -->
+  <div class="top-navigation">
+      <a class="nav-item logo" href="main.html">Fablix</a>
+      <div class="top-navigation">
+          <a class="nav-item" href="movies.html">Movies</a>
+          <a class="nav-item active" href="main.html">Search</a>
+          <!-- browse by genres -->
+          <div class="genres">
+              <button class="genres-button">Genres
+                  <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="genres-content" id="genres-content">
+                  <!-- <a href="#">movie genres</a> -->
+              </div>
+          </div>
+          <a class="nav-item" href="cart.html">Cart</a>
+          <a class="nav-item" href="login.html">Sign in</a>
+      </div>
+      <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+  </div>
+
+  <form class="container_payment" id="checkout_form" method="post" action="#">
+      <div id="login_error_message" style="text-align: center; color: red"></div>
+      <div class="header">
+        <h3>Payment</h3> <!--Header -->
+      </div>
+
+      <label>Accepted Cards</label>
+      <div id = "icon">
+          <i class="fa fa-cc-visa" style="color:navy;"></i>
+          <i class="fa fa-cc-amex" style="color:blue;"></i>
+          <i class="fa fa-cc-mastercard" style="color:red;"></i>
+          <i class="fa fa-cc-discover" style="color:orange;"></i>
+      </div>
+      <br>
+      <label><b>Last Name&nbsp&nbsp&nbsp&nbsp</b></label>
+      <input type="text" id="lastname" name="lastname" placeholder="last name" required="required"/> <br><br>
+
+      <label><b>First Name&nbsp&nbsp&nbsp&nbsp</b></label>
+      <input type="text" id="firstname" name="firstname" placeholder="first name" required="required"/> <br><br>
+
+      <label><b>Card number</b></label>
+      <input type="text" id="card_id" name="card_id" placeholder="XXXX-XXXX-XXXX-XXXX"  required/> <br><br>
+
+      <label><b>Expired&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></label>
+      <input type="text" id="exp" name="exp" placeholder="YYYY-MM-DD" required/> <br>
+
+      <label id = 'total' ><h4>Total price:</h4></label>
+      <b id ="total_price"></b>
+      <br><br>
+      <input type="submit" value="Place Order" class="btn">
+  </form>
+
+  <!-- include jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- include our own JS file -->
+  <script src="./checkout.js"></script>
+  <script src="main_browse.js"></script>
+
+  </body>
+</html>

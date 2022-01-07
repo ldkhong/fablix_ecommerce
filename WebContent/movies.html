@@ -1,0 +1,102 @@
+<!-- This page is following frontend and backend separation.
+    This .html performs two steps:
+    1. Create a html template skeleton, with all the elements defined (some left empty) and named with ids.
+    2. Load movies.js to populate the data into empty elements.
+ -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Top navigation bar CSS-->
+    <link rel="stylesheet" href="navigation.css">
+    <!-- Movies Page CSS -->
+    <link rel="stylesheet" href="movies.css">
+
+</head>
+
+<body>
+<!-- top navigation bar-->
+<div class="top-navigation">
+    <a class="nav-item logo" href="main.html">Fablix</a>
+    <div class="top-navigation">
+        <a class="nav-item active" href="movies.html">Movies</a>
+        <a class="nav-item" href="main.html">Search</a>
+        <!-- browse by genres -->
+        <div class="genres">
+            <button class="genres-button">Genres
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="genres-content" id="genres-content">
+                <!-- <a href="#">movie genres</a> -->
+            </div>
+        </div>
+        <a class="nav-item" href="cart.html">Cart</a>
+        <a class="nav-item" href="login.html">Sign in</a>
+    </div>
+    <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+</div>
+
+<!-- Header -->
+<div class="movie-page-title">Movies</div>
+
+<!-- sorting form -->
+<div class="sorting-container">
+<select name="limit" id="limit">
+    <option disabled selected>Limit</option>
+    <option value="10">10 / page</option>
+    <option value="25">25 / page</option>
+    <option value="50">50 / page</option>
+    <option value="100">100 / page</option>
+</select>
+<div class="sorting-form">
+    <select name="sortTitle" id="sortTitle">
+        <option disabled selected>Title</option>
+        <option value="asc">Title asc</option>
+        <option value="desc">Title desc</option>
+    </select>
+
+    <select name="sortRating" id="sortRating" >
+        <option disabled selected>Rating</option>
+        <option value="desc">Rating desc</option>
+        <option value="asc">Rating asc</option>
+    </select>
+
+    <select name="orderBy" id="orderBy" >
+        <option disabled selected>Break by</option>
+        <option value="1">Rating-Title</option>
+        <option value="2">Title-Rating</option>
+    </select>
+
+    <input class="btn btn-outline-primary" type="submit" value="apply" id="sort-form">
+</div>
+</div>
+
+<div id="movies-list">
+
+</div>
+
+<div class="pagination-container">
+    <div class="pagination" id="pagination">
+    </div>
+</div>
+
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Load our own JS file -->
+<!-- The path is relative to movies.html, since these two files are in the same directory -->
+<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
+     otherwise the url is relative to the root path-->
+<script src="movies.js"></script>
+<script src="main_browse.js"></script>
+</body>
+</html>

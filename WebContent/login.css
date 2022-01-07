@@ -1,0 +1,107 @@
+.container{
+    max-width:fit-content;
+    padding: 20px 50px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+/* button */
+.container input[type = 'submit'] {
+    display: block;
+    margin:10px auto;
+    width: 100%;
+}
+
+.container label{
+    margin: 10px auto;
+}
+
+/* login and OR */
+h2 {
+    overflow: hidden;
+    text-align: center;
+    font-size: 20px;
+}
+
+h2:before,
+h2:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+h2:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+h2:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/*username and password */
+.login-control input {
+    display:block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    border-radius: 1.5rem;
+    border:2px solid #74b9ff;
+    padding: .375rem .75rem;
+    margin: 25px auto;
+}
+
+.login-control {
+    position: relative;
+}
+
+.login-control i {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.login-control small {
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    color: #d63031;
+    visibility: hidden;
+}
+
+.login-control.error input {
+    border: 2px solid #d63031;
+}
+
+.login-control.error i.fa-exclamation-circle{
+    color: #d63031;
+    visibility: visible;
+}
+
+.login-control.error small{
+    color: #d63031;
+    visibility: visible;
+    box-sizing: border-box;
+}
+
+.login-control.success input {
+    border: 2px solid #00b894;
+}
+
+.login-control.success i.fa-check-circle {
+    color: #00b894;
+    visibility: visible;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="cart.css">
+
+    <title>Fablix Shopping cart</title>
+</head>
+<body>
+
+<!-- top navigation bar-->
+<div class="top-navigation">
+    <a class="nav-item logo" href="main.html">Fablix</a>
+    <div class="top-navigation">
+        <a class="nav-item" href="movies.html">Movies</a>
+        <a class="nav-item" href="main.html">Search</a>
+        <!-- browse by genres -->
+        <div class="genres">
+            <button class="genres-button">Genres
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="genres-content" id="genres-content">
+                <!-- <a href="#">movie genres</a> -->
+            </div>
+        </div>
+        <a class="nav-item active" href="cart.html">Cart</a>
+        <a class="nav-item" href="login.html">Sign in</a>
+    </div>
+    <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+</div>
+
+<!-- Shopping Cart -->
+<div class = "shopping-cart" id = "shopping-cart">
+    <div class="title"> Shopping Cart </div>
+
+    <div class="list-headers">
+        <div class="item-ordered"></div>
+        <div class="description-header">Product</div>
+        <div class="quantity-header">Quantity</div>
+        <div class="unit-price-header">Unit Price</div>
+        <div class="total-price-header">Total</div>
+        <div class="delete-btn"></div>
+    </div>
+
+    <div class="empty-cart">Your cart is empty!</div>
+
+    <div class="list-items" id ="list-items">
+        <!-- List of items will be appended here in cart.js by function handleCartArray()-->
+    </div>
+
+    <div class="subtotal">
+        Subtotal: $0.00
+    </div>
+
+    <div class="other-btn">
+        <a class="btn btn-outline-primary" id="continue-shopping-btn">Continue Shopping</a>
+        <button class="btn btn-outline-primary" id="update-cart-btn">Update Cart</button>
+        <a class="btn btn-outline-primary" id="checkout-btn">Checkout</a>
+    </div>
+
+
+</div>
+
+<!-- include your own JS file -->
+<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+<script type='text/javascript' src='cart.js'></script>
+<script type="text/javascript" src="main_browse.js"></script>
+</body>
+</html>
