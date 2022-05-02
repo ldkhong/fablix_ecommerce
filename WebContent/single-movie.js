@@ -44,6 +44,10 @@ function handleResult(resultData) {
     }
     else
         movieHTML += "<span>Starring by: No Information<span>";
+    movieHTML += '<div class="other-btn" style="margin-top: 5px;">\n' +
+        '    <a href="#" class="btn btn-outline-primary" id="go-back-btn" style="margin-left: 10px">Go Back</a>\n' +
+        '    <button class="btn btn-outline-primary" id="btn-add">Add to Cart</button>\n' +
+        '</div>'
     movieHTML += "</div>";
 
     $("#single-movie").append(movieHTML);
@@ -52,15 +56,19 @@ function handleResult(resultData) {
 }
 
 function handleAddResult(resultDataJson) {
+    // display a success message if
     if (resultDataJson["status"] === "success") {
-        $("#login_error_message").text(resultDataJson["message"]);
-    } else {
-        $("#login_error_message").text(resultDataJson["message"]);
-    }
+        $("#success_message").empty().append(
+            '<p class="fade-message">' + resultDataJson["title"] + " has been added to cart!" + '</p>'
+        );
 
-    let cartItems = $("#total-items");
-    cartItems.css("display","block");
-    cartItems.text(resultDataJson["totalItems"]);
+        // display an error message if adding quantity is 0
+    } else {
+        $("#error_message").text(resultDataJson["message"]);
+    }
+    let total_items = $("#total-items");
+    total_items.css("display", "block");
+    total_items.text(resultDataJson["totalItems"]);
 }
 
 function addItems(id, title) {

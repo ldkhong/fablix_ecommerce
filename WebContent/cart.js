@@ -1,6 +1,6 @@
 /**
  * Handle the items in item list
- * @param resultArray jsonObject, needs to be parsed to html
+ * @param resultDataJson jsonObject
  */
 function handleSessionData(resultDataJson) {
     //let resultDataJson = JSON.parse(resultDataString);
@@ -18,7 +18,7 @@ function handleSessionData(resultDataJson) {
     itemsHTML.html("");
 
     //show cart is empty if number of items in cart is 0
-    if(listOfItems.length == 0) {
+    if(listOfItems.length === 0) {
         document.getElementsByClassName("empty-cart")[0].style.display = "block";
         $("#checkout-btn").attr("href","#");
     }
@@ -129,14 +129,17 @@ function updateCart(listOfItems) {
 
     for(let i = 0; i < listOfUpdateQty.length - 1; i++) {
         let updateQty = listOfUpdateQty[i].value;
-        if(updateQty != listOfItems[i]["quantity"]) {
+        if(updateQty !== listOfItems[i]["quantity"]) {
             console.log(updateQty, listOfItems[i]["quantity"]);
             updateItem(listOfItems[i]["id"], updateQty, false);
         }
     }
 
-    if(len > -1)
+    if(len > -1) {
         updateItem(listOfItems[len]["id"], listOfUpdateQty[len].value, true);
+    }
+
+    $("#success_message").empty().append('<p class="fade-message">Your cart has been updated successfully! </p>');
 }
 
 /** Send update quantity of item in the session */

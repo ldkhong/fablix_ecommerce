@@ -2,7 +2,7 @@ let checkout_form = $("#checkout_form");
 
 /**
  * Handle the data returned by LoginServlet
- * @param resultDataString jsonObject
+ * @param resultDataJson jsonObject
  */
 function handleCheckoutResult(resultDataJson) {
     //let resultDataJson = JSON.parse(resultDataString);
@@ -49,8 +49,9 @@ function submitCheckoutForm(formSubmitEvent) {
 $(document).ready(function(){
     let urlParams = new URLSearchParams(window.location.search);
     let price = urlParams.get('total');
-    $('#total_price').attr("value",price);
-    $('#total_price').append("$" + price);
+    let total_price = $('#total_price');
+    total_price.attr("value",price);
+    total_price.append("$" + price);
 
 })
 

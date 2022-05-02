@@ -2,8 +2,9 @@
 function handleMovieResult(resultData) {
     /** sort form */
     //change select option value
-    $("#limit").val(resultData["limit"]);
-    $("#limit").on("change", function() {
+    let limit = $('#limit');
+    limit.val(resultData["limit"]);
+    limit.on("change", function() {
         let queryParams = new URLSearchParams(window.location.search);
         queryParams.set("limit", $(this).val());
         history.replaceState(null, null, "?"+queryParams.toString());
@@ -17,7 +18,7 @@ function handleMovieResult(resultData) {
 
     /** number of Items shows on cart icon*/
     let totalItems = resultData["totalItems"];
-    if(totalItems == 0){
+    if(totalItems === 0){
         $("#total-items").css("display", "none");
     }
     else
@@ -77,7 +78,7 @@ function handleMovieResult(resultData) {
 }
 
 function paginationHTML(lastPageNumber, currentPageNumber) {
-    if(lastPageNumber == 0) lastPageNumber = 1;
+    if(lastPageNumber === 0) lastPageNumber = 1;
     if(currentPageNumber > lastPageNumber) currentPageNumber = lastPageNumber;
     if(currentPageNumber <= 0) currentPageNumber = 1;
 
@@ -85,7 +86,7 @@ function paginationHTML(lastPageNumber, currentPageNumber) {
     let searchParams = new URLSearchParams(window.location.search);
 
     // Previous button
-    if (currentPageNumber == 1)
+    if (currentPageNumber === 1)
         pagination += '<a><i class="fa fa-angle-left" style="font-size:20px;color:black;"></i></a>';
     else {
         searchParams.set('page', (currentPageNumber - 1).toString());
@@ -103,7 +104,7 @@ function paginationHTML(lastPageNumber, currentPageNumber) {
 
     for (let k = midFirstPage; k <= midLastPage; k++) {
         searchParams.set('page', k.toString());
-        if (k == currentPageNumber) {
+        if (k === currentPageNumber) {
             pagination += '<a href="movies.html?' + searchParams.toString() + '"' + ' class="active"' + '>' + k + '</a>';
         } else {
             pagination += '<a href="movies.html?' + searchParams.toString() + '">' + k + '</a>';
@@ -117,7 +118,7 @@ function paginationHTML(lastPageNumber, currentPageNumber) {
     }
 
     // Next button
-    if (currentPageNumber == lastPageNumber )
+    if (currentPageNumber === lastPageNumber )
         pagination += '<a><i class="fa fa-angle-right" style="font-size:20px; color:black;"></i></a>';
     else {
         searchParams.set('page', (currentPageNumber + 1).toString());
@@ -130,15 +131,17 @@ function paginationHTML(lastPageNumber, currentPageNumber) {
 function handleAddResult(resultDataJson) {
     // display a success message if
     if (resultDataJson["status"] === "success") {
-        $("#login_error_message").text(resultDataJson["message"]);
+        $("#success_message").empty().append(
+            '<p class="fade-message">' + resultDataJson["title"] + " has been added to cart!" + '</p>'
+        );
 
         // display an error message if adding quantity is 0
     } else {
-        $("#login_error_message").text(resultDataJson["message"]);
+        $("#error_message").text(resultDataJson["message"]);
     }
-
-    $("#total-items").css("display","block");
-    $("#total-items").text(resultDataJson["totalItems"]);
+    let total_items = $("#total-items");
+    total_items.css("display","block");
+    total_items.text(resultDataJson["totalItems"]);
 }
 
 function addItems(id,title) {

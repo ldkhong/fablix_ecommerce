@@ -7,7 +7,7 @@
 /*Auto complete search title */
 .auto-search-title{
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px 0;
     height: 60px;
     font-size: 40px;
     overflow: hidden;
@@ -19,26 +19,41 @@
 }
 
 .autocomplete-searchbox {
-    text-align: center;
     display: inline-block;
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
     font-size: 20px;
-    border: 2px solid #74b9ff;
+    border: 2px solid #ff7675;
     border-radius: 1.5rem;
     max-width: 60%;
 }
 
-.auto-search button{
+.autocomplete-searchbox:focus {
+    border-color: #ff7675;
+}
+
+#btn_auto{
     position: absolute;
     right: 20%;
     font-size: 20px;
     border: none;
 }
 
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+#btn_auto:hover {
+    border: none;
+}
+
+.autocomplete-suggestions {
+    border-radius: 25px;
+    border: 2px solid #ff7675;
+    background: #FFF;
+    overflow: auto;
+
+    margin-top: 10px;
+}
+
+.autocomplete-suggestion { padding: 5px 20px; white-space: nowrap; overflow: hidden; font-size: 18px; }
 .autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-suggestions strong { font-weight: normal; color: #ff7675; }
 .autocomplete-group { padding: 2px 5px; }
 .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
 
@@ -57,7 +72,7 @@
 
 /* Advanced search form */
 #advanced_search{
-    margin: 0px auto 10px auto;
+    margin: 0 auto 10px auto;
     text-decoration: underline;
 }
 
@@ -83,7 +98,7 @@
     text-align: center;
     font-size: 16px;
     display: block;
-    border: 2px solid #74b9ff;
+    border: 2px solid #ff7675;
     border-radius: 1.5rem;
     margin: 10px auto;
     padding: .375rem .75rem;

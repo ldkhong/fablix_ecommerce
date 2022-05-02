@@ -9,10 +9,10 @@ function submitSearchForm(formSubmitEvent) {
     let star = $("[name = 'star']").val();
 
     let movieQuery = "movies.html?type=search";
-    movieQuery += ((title == "")? "": "&title=" + title);
-    movieQuery += ((year == "")? "": "&year=" +year);
-    movieQuery += ((director == "")? "": "&director=" + director);
-    movieQuery += ((star == "")? "": "&star=" +  star);
+    movieQuery += ((title === "")? "": "&title=" + title);
+    movieQuery += ((year === "")? "": "&year=" +year);
+    movieQuery += ((director === "")? "": "&director=" + director);
+    movieQuery += ((star === "")? "": "&star=" +  star);
 
     window.location.replace(movieQuery);
 }

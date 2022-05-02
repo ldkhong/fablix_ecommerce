@@ -75,6 +75,7 @@ public class ItemsServlet extends HttpServlet {
                 responseJsonObject.addProperty("message", "No item added");
             }
             responseJsonObject.addProperty("totalItems", totalItems);
+            responseJsonObject.addProperty("title", title);
             response.getWriter().write(responseJsonObject.toString());
         }
         session.setAttribute("totalItems", totalItems);

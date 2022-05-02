@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.uci.ics</groupId>
-    <artifactId>cs122b-spring21-project</artifactId>
+    <artifactId>fablix-ecommerce</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -37,10 +37,11 @@
     </dependencies>
 
     <build>
-        <finalName>cs122b-spring21-project</finalName>
-        <sourceDirectory>../fablix/src</sourceDirectory>
+        <finalName>fablix-ecommerce</finalName>
+        <sourceDirectory>../fablix_ecommerce/src</sourceDirectory>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
@@ -49,10 +50,11 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <warSourceDirectory>../fablix/WebContent</warSourceDirectory>
+                    <warSourceDirectory>../fablix_ecommerce/WebContent</warSourceDirectory>
                 </configuration>
             </plugin>
         </plugins>

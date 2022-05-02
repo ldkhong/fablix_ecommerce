@@ -1,6 +1,6 @@
 /**
  * Handle the data returned by LoginServlet
- * @param resultDataString jsonObject
+ * @param resultData jsonObject
  */
 function handleBrowseResult(resultData) {
     let length = resultData.length;
@@ -16,7 +16,7 @@ function handleBrowseResult(resultData) {
     }
 
     let letters = jQuery('#letters');
-    if(letters.length != 0) {
+    if(letters.length !== 0) {
         const alphabets = ["0","1","2","3","4","5","6","7","8","9",
             "A","B","C","D","E","F","G","H","I","J","K", "L","M","N",
             "O", "P", "Q","R","S","T","U", "V","W","X","Y","Z","*"];
@@ -28,12 +28,13 @@ function handleBrowseResult(resultData) {
         }
     }
 
+    let top_navigation = $(".top-navigation");
     $(".menu-toggle").click(function() {
-        console.log($(".top-navigation").eq(1).css("left"));
-        if($(".top-navigation").eq(1).css("left") == "0px")
-            $(".top-navigation").eq(1).css("left","-100%");
+        console.log(top_navigation.eq(1).css("left"));
+        if(top_navigation.eq(1).css("left") === "0")
+            top_navigation.eq(1).css("left","-100%");
         else
-            $(".top-navigation").eq(1).css("left","0");
+            top_navigation.eq(1).css("left","0");
     });
 }
 

@@ -3,14 +3,15 @@
     display: flex;
 }
 
-.sorting-container #limit{
+#limit{
     margin-left: 50px;
 }
 
-.sorting-container #limit, .sorting-form select{
+#limit, .sorting-form select{
     border: 2px solid #ff7675;
     border-radius: 1.5rem;
     padding:0.1rem 0.4rem;
+    background-color: transparent;
     font-size: 14px;
 }
 
@@ -58,15 +59,19 @@
 
 .sorting-form input, .row:nth-child(3) .right{
     font-size: 1rem;
-    border: 2px solid #00b894;
-    color: #00b894;
+    border: 2px solid #ff7675;
+    color: #ff7675;
     width: 100px;
     margin-left:auto;
 }
 
 .pagination a:hover, .sorting-form input:hover, .row:nth-child(3) .right:hover{
     color:#FFFFFF;
-    background: #00b894;
+    background-color: #ff7675;
+}
+
+.pagination a:hover {
+    border-radius: 50%;
 }
 
 .row .right span{
@@ -103,8 +108,9 @@
 }
 
 .pagination a.active {
-    background-color: #00b894;
+    background-color: #ff7675;
     color: white;
+    border-radius: 50%;
 }
 
 .movie-page-title{

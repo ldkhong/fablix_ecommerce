@@ -9,7 +9,12 @@ body {
     height: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: #74b9ff;
+    color: black;
+}
+
+select {
+    -webkit-appearance:none;
+    border-radius: 25%;
 }
 
 .top-navigation{
@@ -135,19 +140,19 @@ body {
 }
 
 .menu-toggle:hover{
-    color: #0984e3;
+    color: #ff7675;
 }
 
 .btn-outline-primary{
     border-radius: 1.5rem;
-    color: #0984e3;
+    color: #ff7675;
     background: transparent;
-    border: 2px solid #0984e3;
+    border: 2px solid #ff7675;
 }
 
 .btn-outline-primary:hover{
-    background-color: #0984e3;
-    border: 2px solid #0984e3;
+    background-color: #ff7675;
+    border: 2px solid #ff7675;
 }
 
 /* mobiles/ipads display */
@@ -184,4 +189,22 @@ body {
     .top-navigation a.nav-item.logo {
         padding: 10px 20px;
     }
+}
+
+.fade-message {
+    -moz-animation: fadeIn 1s ease-in 1s forwards;
+    -webkit-animation: fadeIn 1s ease-in 1s forwards;
+    -o-animation: fadeIn 1s ease-in 1s forwards;
+    animation: fadeIn 1s ease-in 1s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    to {opacity: 0; visibility: hidden;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 1; visibility: visible;}
+    100% {opacity: 0; visibility: hidden;}
 }

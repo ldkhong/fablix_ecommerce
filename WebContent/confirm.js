@@ -1,6 +1,6 @@
 /**
  * Handle the data returned by IndexServlet
- * @param resultDataString jsonObject, consists of session info
+ * @param resultDataJson jsonObject, consists of session info
  */
 
 function handleConfirmData(resultDataJson) {
